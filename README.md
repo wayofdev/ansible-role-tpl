@@ -19,7 +19,7 @@
 <img alt="Ansible Quality Score" src="https://img.shields.io/ansible/quality/59060?style=flat-square"/></a>
 <a href="https://galaxy.ansible.com/lotyp/tpl">
 <img alt="Ansible Role" src="https://img.shields.io/ansible/role/d/59060?style=flat-square"/></a>
-<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License"/></a>
+<a href="LICENSE"><img src="https://img.shields.io/github/license/wayofdev/ansible-role-tpl.svg?style=flat-square" alt="Software License"/></a>
 </div>
 
 
