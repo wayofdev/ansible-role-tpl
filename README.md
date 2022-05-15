@@ -19,8 +19,9 @@
 <img alt="Ansible Quality Score" src="https://img.shields.io/ansible/quality/59193?style=flat-square"/></a>
 <a href="https://galaxy.ansible.com/lotyp/tpl">
 <img alt="Ansible Role" src="https://img.shields.io/ansible/role/d/59193?style=flat-square"/></a>
-<a href="LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-green.svg?style=flat-square" alt="Software License"/></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/License-LGPL%20v3-green.svg?style=flat-square" alt="Software License"/></a>
 </div>
+
 
 
 
@@ -127,7 +128,7 @@ This role has been tested on these systems:
 
 ## 🤝 License
 
-[![Licence](https://img.shields.io/badge/License-GPLv3-green.svg?style=for-the-badge)](./LICENSE)
+[![Licence](https://img.shields.io/badge/License-LGPL%20v3-green.svg?style=for-the-badge)](./LICENSE)
 
 <br>
 
