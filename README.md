@@ -138,6 +138,6 @@ This role was created in **2022** by [lotyp / wayofdev](https://github.com/wayof
 <br>
 
 <div align="center">
-<img width="50%" alt="Bomjman" src="./assets/bmj.png">
+<img width="70%" alt="Bomjman" src="./assets/bmj.png">
 </div>
 
