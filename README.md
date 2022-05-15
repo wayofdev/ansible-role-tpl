@@ -85,7 +85,7 @@ tpl:
 
 To install dependencies and start development you can check contents of our `Makefile`
 
-**Install** depdendencies:
+**Install** dependencies:
 
 ```bash
 $ make install-deps
@@ -138,6 +138,6 @@ This role was created in **2022** by [lotyp / wayofdev](https://github.com/wayof
 <br>
 
 <div align="center">
-<img src="./assets/bmj.png">
+<img width="50%" alt="Bomjman" src="./assets/bmj.png">
 </div>
 
