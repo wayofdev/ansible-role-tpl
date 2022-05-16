@@ -136,9 +136,3 @@ This role has been tested on these systems:
 
 This role was created in **2022** by [lotyp / wayofdev](https://github.com/wayofdev).
 
-<br>
-
-<div align="center">
-<img width="70%" alt="Bomjman" src="./assets/bmj.png">
-</div>
-
