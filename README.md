@@ -21,10 +21,6 @@
 <img alt="Ansible Role" src="https://img.shields.io/ansible/role/d/59193?style=flat-square"/></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/License-LGPL%20v3-green.svg?style=flat-square" alt="Software License"/></a>
 </div>
-
-
-
-
 <br>
 
 # Ansible Role: Template
@@ -32,6 +28,34 @@
 This is template, that is used to create roles for wayofdev project.
 
 If you **like/use** this role, please consider **starring** it. Thanks!
+
+<br>
+
+## 🗂 Directory Tree for Project
+
+For ansible language support and autocompletion with [OrchidE](https://www.orchide.dev/pages/dokumentation) following structure for roles is used:
+
+```
+├── Makefile
+├── group_vars
+├── host_vars
+├── package.json
+├── requirements.yml
+├── roles
+│   └── tpl
+│       ├── defaults
+│       ├── files
+│       ├── handlers
+│       ├── meta
+│       ├── tasks
+│       ├── templates
+│       └── vars
+└── tests
+    ├── ansible.cfg
+    ├── defaults
+    ├── inventory.yml
+    └── test.yml
+```
 
 <br>
 
