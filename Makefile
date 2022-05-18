@@ -26,6 +26,15 @@ test:
 	cd $(workdir) && ansible-playbook $(playbook)
 .PHONY: test
 
+test-idempotence:
+	idempotence=$(mktemp)
+	cd $(workdir) && ansible-playbook $(playbook) | tee -a ${idempotence}
+	tail ${idempotence} \
+		| grep -q 'changed=0.*failed=0' \
+		&& (echo 'Idempotence test: pass' && exit 0) \
+		|| (echo 'Idempotence test: fail' && exit 1)
+.PHONY: test-idempotence
+
 ### List all hostnames
 ls-host:
 	cd $(workdir) && ansible all -i $(inventory) -m shell -a "hostname;"
@@ -40,6 +49,14 @@ check-syntax:
 install-deps:
 	ansible-galaxy install -r $(reqs)
 .PHONY: install-deps
+
+install-py-deps:
+	pip3 install yamllint
+	pip3 install ansible-lint
+.PHONY: install-py-deps
+
+install-all-deps: install-py-deps install-deps
+.PHONY: install-all-deps
 
 ### Git
 hooks:

@@ -30,10 +30,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install test dependencies.
-        run: |
-          pip3 install yamllint
-          pip3 install ansible-lint
-          ansible-galaxy install -r requirements.yml
+        run: make install-all-deps
 
       - name: Run yamllint.
         run: yamllint .
@@ -65,23 +62,16 @@ jobs:
         run: |
           set -eux
           pip install ansible
-          ansible-galaxy install -r requirements.yml
+          make install-deps
 
       - name: Test the playbook.
-        run: |
-          ansible-playbook tests/test.yml
+        run: make test
         env:
           ANSIBLE_FORCE_COLOR: '1'
           ANSIBLE_STDOUT_CALLBACK: 'unixy'
 
       - name: Idempotence check.
-        run: |
-          idempotence=$(mktemp)
-          ansible-playbook tests/test.yml | tee -a ${idempotence}
-          tail ${idempotence} \
-            | grep -q 'changed=0.*failed=0' \
-            && (echo 'Idempotence test: pass' && exit 0) \
-            || (echo 'Idempotence test: fail' && exit 1)
+        run: make test-idempotence
         env:
           ANSIBLE_FORCE_COLOR: '1'
           ANSIBLE_STDOUT_CALLBACK: 'unixy'
