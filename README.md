@@ -36,25 +36,25 @@ If you **like/use** this role, please consider **starring** it. Thanks!
 For ansible language support and autocompletion with [OrchidE](https://www.orchide.dev/pages/dokumentation) following structure for roles is used:
 
 ```
-├── Makefile
-├── group_vars
-├── host_vars
-├── package.json
-├── requirements.yml
-├── roles
-│   └── tpl
-│       ├── defaults
-│       ├── files
-│       ├── handlers
-│       ├── meta
-│       ├── tasks
-│       ├── templates
-│       └── vars
-└── tests
-    ├── ansible.cfg
-    ├── defaults
-    ├── inventory.yml
-    └── test.yml
+├── 📄 Makefile
+├── 🗂 group_vars
+├── 🗂 host_vars
+├── 📄 package.json
+├── 📄 requirements.yml
+├── 🗂 roles
+│   └── 🗂 tpl
+│       ├── 🗂 defaults
+│       ├── 🗂 files
+│       ├── 🗂 handlers
+│       ├── 🗂 meta
+│       ├── 🗂 tasks
+│       ├── 🗂 templates
+│       └── 🗂 vars
+└── 🗂 tests
+    ├── 📄 ansible.cfg
+    ├── 🗂 defaults
+    ├── 📄 inventory.yml
+    └── 📄 test.yml
 ```
 
 <br>
@@ -83,8 +83,8 @@ tpl:
 
 ## 📦 Dependencies
 
-  - `geerlingguy.homebrew` (Soft dependency)
-  - `ansible.community.general` – installation handled by `Makefile` and it is defined in `requirements.yml`
+  - `geerlingguy.homebrew` – Soft dependency
+  - `ansible.community.general` – Installation handled by `Makefile` and it is defined in `requirements.yml`
 
 <br>
 
@@ -101,7 +101,7 @@ tpl:
 
   roles:
     - geerlingguy.mac.homebrew
-    - lotyp.tpl
+    - wayofdev.tpl
 ```
 
 <br>
