@@ -71,7 +71,13 @@ jobs:
           ANSIBLE_STDOUT_CALLBACK: 'unixy'
 
       - name: Idempotence check.
-        run: make test-idempotence
+        run: |
+          idempotence=$(mktemp)
+          cd $(workdir) && ansible-playbook $(playbook) | tee -a ${idempotence}
+          tail ${idempotence} \
+              | grep -q 'changed=0.*failed=0' \
+              && (echo 'Idempotence test: pass' && exit 0) \
+              || (echo 'Idempotence test: fail' && exit 1)
         env:
           ANSIBLE_FORCE_COLOR: '1'
           ANSIBLE_STDOUT_CALLBACK: 'unixy'
