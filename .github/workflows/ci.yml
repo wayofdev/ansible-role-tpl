@@ -21,27 +21,19 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the codebase.
+      - name: Check out the codebase
         uses: actions/checkout@v3
 
-      - name: Set up Python 3.
+      - name: Set up Python 3
         uses: actions/setup-python@v3
         with:
           python-version: '3.x'
 
-      - name: Install test dependencies.
+      - name: Install test dependencies
         run: make install-all-deps
 
-      - name: Run yamllint.
-        run: poetry run yamllint .
-
-      - name: Run ansible lint.
-        working-directory: tests
-        run: poetry run ansible-lint test.yml -c ../.ansible-lint
-
-      - name: Verify syntax
-        working-directory: tests
-        run: ansible-playbook test.yml --syntax-check
+      - name: Run linting tasks
+        run: make lint
 
   integration:
     name: Integration.
@@ -52,25 +44,24 @@ jobs:
           - macos-12
 
     steps:
-      - name: Check out the codebase.
+      - name: Check out the codebase
         uses: actions/checkout@v3
       - uses: actions/setup-python@v3
         with:
           python-version: 3.9
 
-      - name: Install dependencies.
+      - name: Install dependencies
         run: |
           set -eux
-          pip install ansible
-          make install-deps
+          make install-all-deps
 
-      - name: Test the playbook.
+      - name: Test the playbook
         run: make test
         env:
           ANSIBLE_FORCE_COLOR: '1'
           ANSIBLE_STDOUT_CALLBACK: 'unixy'
 
-      - name: Idempotence check.
+      - name: Idempotence check
         run: |
           idempotence=$(mktemp)
           cd tests && ansible-playbook test.yml | tee -a ${idempotence}
@@ -91,7 +82,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: galaxy
+      - name: Publish to Ansible Galaxy
         uses: lotyp/galaxy-action@1.2.1
         with:
           galaxy_api_key: ${{ secrets.GALAXY_API_KEY }}
