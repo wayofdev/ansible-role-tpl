@@ -1,6 +1,8 @@
+---
+
 # https://github.com/google-github-actions/release-please-action#release-types-supported
 
-on:
+on:  # yamllint disable-line rule:truthy
   push:
     branches:
       - master
