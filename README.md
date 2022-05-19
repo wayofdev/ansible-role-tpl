@@ -6,7 +6,6 @@
 </div>
 
 
-
 <br>
 
 <br>
@@ -33,29 +32,50 @@ If you **like/use** this role, please consider **starring** it. Thanks!
 
 ## 🗂 Directory Tree for Project
 
-For ansible language support and autocompletion with [OrchidE](https://www.orchide.dev/pages/dokumentation) following structure for roles is used:
+Repository uses default structure, sugested by [Ansible Documentation](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html)
 
 ```
+.
 ├── 📄 Makefile
-├── 🗂 group_vars
-├── 🗂 host_vars
-├── 📄 package.json
+├── 📄 README.md
+├── 🗂 defaults
+│   └── 📄 main.yml
+├── 🗂 files
+├── 🗂 handlers
+│   └── 📄 main.yml
+├── 🗂 meta
+│   └── 📄 main.yml
+├── 📄 pyproject.toml
 ├── 📄 requirements.yml
-├── 🗂 roles
-│   └── 🗂 tpl
-│       ├── 🗂 defaults
-│       ├── 🗂 files
-│       ├── 🗂 handlers
-│       ├── 🗂 meta
-│       ├── 🗂 tasks
-│       ├── 🗂 templates
-│       └── 🗂 vars
-└── 🗂 tests
-    ├── 📄 ansible.cfg
-    ├── 🗂 defaults
-    ├── 📄 inventory.yml
-    └── 📄 test.yml
+├── 🗂 tasks
+│   └── 📄 main.yml
+├── 🗂 templates
+├── 🗂 tests
+│   ├── 📄 ansible.cfg
+│   ├── 🗂 defaults
+│   │   └── 📄 main.yml
+│   ├── 📄 inventory.yml
+│   └── 📄 test.yml
+└── 🗂 vars
+    └── 📄 main.yml
 ```
+
+## 👨‍💻 IDE Support
+
+Jetbrains products has great ansible language support together with [OrchidE plugin](https://plugins.jetbrains.com/plugin/12626-orchide--ansible-language-support).
+
+> :warning: **Notice**: Note: For ansible language support and autocompletion with [OrchidE](https://www.orchide.dev/pages/dokumentation) following additional `File Type Patterns` should be added.
+
+Open Preferences → Languages & Frameworks → OrchidE → File Type Patterns:
+
+| Ansible Type | Regex Pattern                 | Pattern Type |
+| ------------ | ----------------------------- | ------------ |
+| RoleTask     | `.*/tasks/.*\.ya?ml`          | Include      |
+| RoleTask     | `.*/handlers/.*\.ya?ml`       | Include      |
+| Variable     | `.*/tests/defaults/.*\.ya?ml` | Include      |
+| Variable     | `.*/defaults/.*\.ya?ml`       | Include      |
+| Variable     | `.*/meta/.*\.ya?ml`           | Include      |
+| Variable     | `.*/vars/.*\.ya?ml`           | Include      |
 
 <br>
 

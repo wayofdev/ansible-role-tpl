@@ -7,8 +7,12 @@ license = "LGPLv3"
 
 [tool.poetry.dependencies]
 python = "^3.9"
+ansible = "^5.8.0"
 
 [tool.poetry.dev-dependencies]
+ansible-compat = "^2.0.4"
+ansible-lint = "^6.0.3"
+yamllint = "^1.26.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
