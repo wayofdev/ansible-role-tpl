@@ -2,7 +2,7 @@
 
 galaxy_info:
   role_name: tpl
-  # namespace: wayofdev
+  namespace: wayofdev
   author: lotyp
   description: Dummy template ansible role for wayofdev repositories.
   company: wayofdev
