@@ -64,7 +64,7 @@ jobs:
       - name: Idempotence check
         run: |
           idempotence=$(mktemp)
-          cd tests && ansible-playbook test.yml | tee -a ${idempotence}
+          cd tests && poetry run ansible-playbook test.yml | tee -a ${idempotence}
           tail ${idempotence} \
             | grep -q 'changed=0.*failed=0' \
             && (echo 'Idempotence test: pass' && exit 0) \
