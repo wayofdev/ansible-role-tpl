@@ -33,11 +33,11 @@ jobs:
         run: make install-all-deps
 
       - name: Run yamllint.
-        run: yamllint .
+        run: poetry run yamllint .
 
       - name: Run ansible lint.
         working-directory: tests
-        run: ansible-lint test.yml -c ../.ansible-lint
+        run: poetry run ansible-lint test.yml -c ../.ansible-lint
 
       - name: Verify syntax
         working-directory: tests

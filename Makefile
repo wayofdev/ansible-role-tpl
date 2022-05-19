@@ -17,6 +17,7 @@ reqs ?= requirements.yml
 
 ### Lint yaml files
 lint:
+	poetry run yamllint .
 	cd $(workdir) && ansible-lint $(playbook) -c ../.ansible-lint
 	cd $(workdir) && ansible-playbook $(playbook) --syntax-check
 .PHONY: lint

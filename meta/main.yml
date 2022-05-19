@@ -2,14 +2,13 @@
 
 galaxy_info:
   role_name: tpl
-  namespace: wayofdev
   author: lotyp
   description: Dummy template ansible role for wayofdev repositories.
   company: wayofdev
 
   license: MIT
 
-  min_ansible_version: 2.12
+  min_ansible_version: "2.12"
 
   platforms:
     - name: macOS
@@ -17,9 +16,9 @@ galaxy_info:
         - "Big-Sur"
 
   galaxy_tags:
-    - 'dummy'
-    - 'ansible'
-    - 'role'
-    - 'template'
+    - "dummy"
+    - "ansible"
+    - "role"
+    - "template"
 
 dependencies: []
