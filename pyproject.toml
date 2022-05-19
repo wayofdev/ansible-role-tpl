@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "ansible-role-tpl"
+version = "2.1.0"
+description = "Ansible template for wayofdev roles."
+authors = ["lotyp <lotyp7@gmail.com>"]
+license = "LGPLv3"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

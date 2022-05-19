@@ -95,4 +95,3 @@ jobs:
         uses: lotyp/galaxy-action@1.2.1
         with:
           galaxy_api_key: ${{ secrets.GALAXY_API_KEY }}
-          path: ./roles/tpl
