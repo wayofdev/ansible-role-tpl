@@ -42,8 +42,7 @@ install-deps:
 .PHONY: install-deps
 
 install-py-deps:
-	pip3 install yamllint
-	pip3 install ansible-lint
+	poetry install
 .PHONY: install-py-deps
 
 install-all-deps: install-py-deps install-deps
