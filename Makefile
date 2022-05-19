@@ -42,6 +42,7 @@ install-deps:
 .PHONY: install-deps
 
 install-py-deps:
+	pip3 install poetry
 	poetry install
 .PHONY: install-py-deps
 
