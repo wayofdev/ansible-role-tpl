@@ -6,7 +6,7 @@ galaxy_info:
   description: Dummy template ansible role for wayofdev repositories.
   company: wayofdev
 
-  license: MIT
+  license: LGPL-3.0-only
 
   min_ansible_version: "2.12"
 
