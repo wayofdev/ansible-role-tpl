@@ -29,8 +29,10 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install test dependencies
-        run: make install-all-deps
+      - name: Install dependencies
+        run: |
+          set -eux
+          make install-all-deps
 
       - name: Run linting tasks
         run: make lint
@@ -50,7 +52,7 @@ jobs:
         with:
           python-version: 3.9
 
-      - name: Install dependencies
+      - name: Install test dependencies
         run: |
           set -eux
           make install-all-deps
