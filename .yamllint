@@ -2,6 +2,9 @@
 
 extends: default
 
+ignore: |
+    contrib
+
 # Overwrite above default rules
 rules:
   braces:
@@ -47,6 +50,4 @@ rules:
     require-starting-space: true
     min-spaces-from-content: 1
 
-  line-length:
-    max: 180
-    level: warning
+  line-length: disable
