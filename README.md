@@ -12,10 +12,10 @@
 
 <div align="center">
 <a href="https://actions-badge.atrox.dev/wayofdev/ansible-role-tpl/goto"><img alt="Build Status" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fwayofdev%2Fansible-role-tpl%2Fbadge&style=flat-square"/></a>
-<a href="https://galaxy.ansible.com/wayofdev/tpl"><img alt="Ansible Role" src="https://img.shields.io/ansible/role/59245?style=flat-square"/></a>
+<a href="https://galaxy.ansible.com/wayofdev/tpl"><img alt="Ansible Role" src="https://img.shields.io/ansible/role/59587?style=flat-square"/></a>
 <a href="https://github.com/wayofdev/ansible-role-tpl/tags"><img src="https://img.shields.io/github/v/tag/wayofdev/ansible-role-tpl?sort=semver&style=flat-square" alt="Latest Version"></a>
-<a href="https://galaxy.ansible.com/wayofdev/homebrew"><img alt="Ansible Quality Score" src="https://img.shields.io/ansible/quality/59331?style=flat-square"/></a>
-<a href="https://galaxy.ansible.com/wayofdev/homebrew"><img alt="Ansible Role" src="https://img.shields.io/ansible/role/d/59331?style=flat-square"/></a>
+<a href="https://galaxy.ansible.com/wayofdev/homebrew"><img alt="Ansible Quality Score" src="https://img.shields.io/ansible/quality/59587?style=flat-square"/></a>
+<a href="https://galaxy.ansible.com/wayofdev/homebrew"><img alt="Ansible Role" src="https://img.shields.io/ansible/role/d/59587?style=flat-square"/></a>
 <a href="LICENSE"><img src="https://img.shields.io/github/license/wayofdev/ansible-role-tpl.svg?style=flat-square&color=blue" alt="Software License"/></a>
 <a href="#"><img alt="Commits since latest release" src="https://img.shields.io/github/commits-since/wayofdev/ansible-role-tpl/latest?style=flat-square"></a>
 </div>
