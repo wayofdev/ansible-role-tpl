@@ -23,6 +23,8 @@ INSTALL_POETRY ?= true
 POETRY_BIN ?= poetry
 POETRY_RUNNER ?= poetry run
 ANSIBLE_LATER_BIN = ansible-later
+MACOS_NATIVE_PY_PATH ?= /usr/bin/python3
+PY_PATH ?= $(shell which python3)
 
 # leave empty to disable
 # -v - verbose;
@@ -133,6 +135,16 @@ else
 	@exit 0
 endif
 .PHONY: install-poetry
+
+update-pip:
+ifeq ($(PY_PATH),$(MACOS_NATIVE_PY_PATH))
+	@echo "Native macOS python binary detected at" $(MACOS_NATIVE_PY_PATH)
+	sudo pip3 install --upgrade pip
+else
+	@echo "External python binary detected at" $(PY_PATH)
+	@exit 0
+endif
+.PHONY: update-pip
 
 ### Git
 hooks:
