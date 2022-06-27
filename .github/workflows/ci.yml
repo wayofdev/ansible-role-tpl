@@ -29,18 +29,29 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Install poetry
+      - name: Install poetry into system
         uses: gi0baro/setup-poetry-bin@v1
+        with:
+          virtualenvs-in-project: true
+
+      - name: Load cached .venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v3
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+
+      - name: Install dependencies (cached)
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction --no-root
+        env:
+          PY_COLORS: '1'
 
       - name: Install dependencies
         run: make install-deps
 
       - name: Run linting tasks
-        run: |
-          set -eux
-          poetry run yamllint .
-          poetry run ansible-later **/*.yml
-          cd ./tests && poetry run ansible-lint test.yml -c ../.ansible-lint
+        run: make lint
 
   integration-macos-native:
     name: Integration on macOS (native)
