@@ -32,19 +32,6 @@ jobs:
       - name: Install poetry
         uses: gi0baro/setup-poetry-bin@v1
 
-      - name: Load cached .venv
-        id: cached-poetry-dependencies
-        uses: actions/cache@v3
-        with:
-          path: .venv
-          key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
-
-      - name: Install dependencies (cached)
-        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --no-interaction --no-root
-        env:
-          PY_COLORS: '1'
-
       - name: Install dependencies
         run: make install-deps
 
