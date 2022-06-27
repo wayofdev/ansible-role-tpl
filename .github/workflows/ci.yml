@@ -51,7 +51,9 @@ jobs:
       - name: Run linting tasks
         run: |
           set -eux
-          make lint
+          poetry run yamllint .
+          poetry run ansible-later **/*.yml
+          cd ./tests && poetry run ansible-lint test.yml -c ../.ansible-lint
 
   integration-macos-native:
     name: Integration on macOS (native)
