@@ -1,3 +1,4 @@
+# Standards: 1.0
 ---
 
 local:
@@ -5,3 +6,5 @@ local:
     localhost:
       ansible_connection: local
       host: 127.0.0.1
+
+...

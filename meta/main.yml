@@ -1,24 +1,34 @@
+# Standards: 1.0
 ---
 
 galaxy_info:
   role_name: tpl
-  author: lotyp
+  author: wayofdev
   description: Dummy template ansible role for wayofdev repositories.
   company: wayofdev
 
-  license: LGPL-3.0-only
+  license: GPL-3.0-only
 
   min_ansible_version: "2.12"
 
   platforms:
     - name: macOS
       versions:
-        - "Big-Sur"
+        - Monterey
+        - Big-Sur
 
   galaxy_tags:
-    - "dummy"
-    - "ansible"
-    - "role"
-    - "template"
+    - dummy
+    - ansible
+    - role
+    - template
+    - macos
+    - linux
 
 dependencies: []
+
+# Ensure that custom Ansible plugins and modules included in the main MacOps
+# collection are available to roles in other collections.
+collections: ["wayofdev.macops"]
+
+...

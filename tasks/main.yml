@@ -1,3 +1,4 @@
+# Standards: 1.0
 ---
 
 - name: Template | Debug task
@@ -6,3 +7,5 @@
   changed_when: false
   tags:
     - tpl-install
+
+...

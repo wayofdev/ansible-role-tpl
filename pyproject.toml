@@ -1,18 +1,23 @@
 [tool.poetry]
 name = "ansible-role-tpl"
-version = "2.1.0"
+version = "0.0.0"
 description = "Ansible template for wayofdev roles."
 authors = ["lotyp <lotyp7@gmail.com>"]
-license = "LGPLv3"
+license = "GPL-3.0-only"
 
 [tool.poetry.dependencies]
-python = "^3.9"
-ansible = "^5.8.0"
+python = "^3.8"
+ansible = "^6.0.0"
+jmespath = "^1.0.1"
 
 [tool.poetry.dev-dependencies]
-ansible-compat = "^2.0.4"
-ansible-lint = "^6.2.1"
+docker = "^5.0.3"
+molecule = {extras = ["docker"], version = "^4.0.0"}
+ansible-compat = "^2.1.0"
+ansible-lint = "^6.3.0"
 yamllint = "^1.26.3"
+pre-commit = "^2.19.0"
+ansible-later = {extras = ["ansible"], version = "^2.0.16"}
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
