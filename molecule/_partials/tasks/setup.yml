@@ -16,3 +16,5 @@
 - name: Include ansible-role-tpl
   ansible.builtin.include_role:
     name: ansible-role-tpl
+
+...

@@ -12,3 +12,5 @@
   tasks:
     - name: Molecule | Verify | Include setup tasks
       ansible.builtin.include_tasks: "../tasks/setup.yml"
+
+...

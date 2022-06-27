@@ -22,6 +22,7 @@ REQS ?= requirements.yml
 INSTALL_POETRY ?= true
 POETRY_BIN ?= poetry
 POETRY_RUNNER ?= poetry run
+ANSIBLE_LATER_BIN = ansible-later
 
 # leave empty to disable
 # -v - verbose;
@@ -33,7 +34,7 @@ TEST_PLAYBOOK = $(POETRY_RUNNER) ansible-playbook $(PLAYBOOK) -i $(INVENTORY) $(
 TEST_IDEMPOTENT = $(TEST_PLAYBOOK) | tee /dev/tty | grep -q 'changed=0.*failed=0' && (echo 'Idempotence test: pass' && exit 0) || (echo 'Idempotence test: fail' && exit 1)
 
 ### Lint yaml files
-lint: check-syntax
+lint: check-syntax later
 	$(POETRY_RUNNER) yamllint .
 	cd $(WORKDIR) && $(POETRY_RUNNER) ansible-lint $(PLAYBOOK) -c ../.ansible-lint
 .PHONY: lint
@@ -94,7 +95,7 @@ login-deb:
 .PHONY: login-deb
 
 debug-version:
-	ansible --version
+	$(POETRY_RUNNER) ansible --version
 .PHONY: debug-version
 
 check:
@@ -110,6 +111,10 @@ ls-host:
 check-syntax:
 	cd $(WORKDIR) && $(TEST_PLAYBOOK) --syntax-check
 .PHONY: check-syntax
+
+later:
+	$(ANSIBLE_LATER_BIN) **/*.yml
+.PHONY: later
 
 ### Install ansible dependencies
 install: install-poetry install-deps
@@ -131,6 +136,6 @@ endif
 
 ### Git
 hooks:
-	pre-commit install
-	pre-commit autoupdate
-.PHONY: install-hooks
+	$(POETRY_RUNNER) pre-commit install
+	$(POETRY_RUNNER) pre-commit autoupdate
+.PHONY: hooks
