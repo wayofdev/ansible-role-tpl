@@ -115,7 +115,7 @@ check-syntax:
 .PHONY: check-syntax
 
 later:
-	$(POETRY_RUNNER) $(ANSIBLE_LATER_BIN) **/*.yml
+	$(POETRY_RUNNER) $(ANSIBLE_LATER_BIN) . **/*.yml
 .PHONY: later
 
 ### Install ansible dependencies
