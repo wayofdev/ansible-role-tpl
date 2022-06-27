@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.3.0](https://github.com/wayofdev/ansible-role-tpl/compare/v2.2.0...v2.3.0) (2022-06-27)
+
+
+### Features
+
+* updates to template ([#6](https://github.com/wayofdev/ansible-role-tpl/issues/6)) ([eb13b6f](https://github.com/wayofdev/ansible-role-tpl/commit/eb13b6f3232afbc0033030eb7150000f04aebbb6))
+
+
+### Bug Fixes
+
+* support only molecule tests ([#7](https://github.com/wayofdev/ansible-role-tpl/issues/7)) ([0176df5](https://github.com/wayofdev/ansible-role-tpl/commit/0176df5e47d7497aa58d6b2a405438b1d3774f8a))
+* various fixes in template ([4ff2e03](https://github.com/wayofdev/ansible-role-tpl/commit/4ff2e030251e4f3156036cb6566be82f59a1203b))
+
 ## [2.2.0](https://github.com/wayofdev/ansible-role-tpl/compare/v2.1.0...v2.2.0) (2022-05-19)
 
 
