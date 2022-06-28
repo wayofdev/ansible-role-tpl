@@ -104,7 +104,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   integration-macos-molecule:
-    name: Integration on Linux
+    name: Integration on macOS
     runs-on: ${{ matrix.os }}
     strategy:
       max-parallel: 4
