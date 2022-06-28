@@ -92,12 +92,6 @@ Repository uses default structure, sugested by [Ansible Documentation](https://d
 ├── 🗂 tasks
 │   └── 📄 main.yml
 ├── 🗂 templates
-├── 🗂 tests
-│   ├── 📄 ansible.cfg
-│   ├── 🗂 defaults
-│   │   └── 📄 main.yml
-│   ├── 📄 inventory.yml
-│   └── 📄 test.yml
 └── 🗂 vars
     └── 📄 main.yml
 ```
@@ -204,28 +198,21 @@ You can check `Makefile` to get full list of commands for remote and local testi
 > :warning: **Notice**: By defaut all tests are ran against your local machine!
 
 ```bash
-# run all tags with scenario from ./tests/test.yml
-$ make test
-
-# or test-tag without any parameters
-$ make test-tag
-
-# run idempotency check
-$ make test-idempotent
-
-# run tasks that validate config file and does installation
-$ export TASK_TAGS="tpl-install tpl-update"
-$ make test-tag
-
-# run by predefined command that executes only one tag
-$ make test-install
-$ make test-update
-
 # run molecule tests on localhost
 $ poetry run molecule test --scenario-name default-macos-on-localhost -- -vvv
 
 # or with make command
 $ make m-local
+
+# choose which tags will be included
+# run tasks that validate config file and does installation
+$ export TASK_TAGS="tpl-install,tpl-update"; make m-local
+
+# runs molecule with docker driver
+$ poetry run molecule test --scenario-name default -- -vvv
+
+# or with make file
+$ make m-linux
 ```
 
 <br>

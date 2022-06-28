@@ -1,6 +1,0 @@
----
-
-# If you need to totally override defaults,
-# use this config and then in CI stage do cp with rewrite.
-
-...
