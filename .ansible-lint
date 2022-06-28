@@ -3,3 +3,7 @@
 # https://ansible-lint.readthedocs.io/en/latest/configuring/
 
 skip_list: []
+
+exclude_paths:
+  - ./contrib
+  - ./.venv
