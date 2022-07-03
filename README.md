@@ -205,7 +205,6 @@ $ poetry run molecule test --scenario-name default-macos-on-localhost -- -vvv
 $ make m-local
 
 # choose which tags will be included
-# run tasks that validate config file and does installation
 $ export TASK_TAGS="tpl-install,tpl-update"; make m-local
 
 # runs molecule with docker driver
@@ -227,7 +226,7 @@ $ poetry run molecule test --scenario-name default-macos-over-ssh -- -vvv
 $ make m-remote
 
 # tags also can be passed
-$ export TASK_TAGS="tpl-install tpl-update"
+$ export TASK_TAGS="tpl-install,tpl-update"
 $ make m-remote
 ```
 
