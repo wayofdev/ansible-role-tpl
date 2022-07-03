@@ -23,7 +23,7 @@ PY_PATH ?= $(shell which python3)
 
 # leave empty to disable
 # -v - verbose;
-# -vvv - more details
+# -vv - more details
 # -vvv - enable connection debugging
 DEBUG_VERBOSITY ?= -vvv
 
@@ -43,7 +43,7 @@ m-remote:
 .PHONY: m-remote
 
 m-linux:
-	$(POETRY_RUNNER) run molecule test --scenario-name default -- $(DEBUG_VERBOSITY) --tags $(TASK_TAGS)
+	$(POETRY_RUNNER) molecule test --scenario-name default -- $(DEBUG_VERBOSITY) --tags $(TASK_TAGS)
 .PHONY: m-linux
 
 login-mac:
@@ -98,4 +98,4 @@ endif
 hooks:
 	$(POETRY_RUNNER) pre-commit install
 	$(POETRY_RUNNER) pre-commit autoupdate
-.PHONY: install-hooks
+.PHONY: hooks
