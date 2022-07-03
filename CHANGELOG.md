@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.1](https://github.com/wayofdev/ansible-role-tpl/compare/v2.4.0...v2.4.1) (2022-07-03)
+
+
+### Bug Fixes
+
+* remove become in ci, fixes in Makefile ([67acb84](https://github.com/wayofdev/ansible-role-tpl/commit/67acb842d7fe8b62907a46bfc3b14710e36d2071))
+
 ## [2.4.0](https://github.com/wayofdev/ansible-role-tpl/compare/v2.3.0...v2.4.0) (2022-06-28)
 
 
