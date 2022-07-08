@@ -21,7 +21,7 @@ jobs:
           package-name: ansible-role-tpl
           default-branch: master
           changelog-types: |
-            [
+            "[
               {type: 'feat', section: 'Features'},
               {type: 'fix', section: 'Bug Fixes'},
               {type: 'perf', section: 'Performance Improvements'},
@@ -34,6 +34,6 @@ jobs:
               {type: 'test', section: 'Tests', hidden: true},
               {type: 'build', section: 'Build System', hidden: true},
               {type: 'ci', section: 'Continuous Integration', hidden: true}
-            ]
+            ]"
 
 ...
